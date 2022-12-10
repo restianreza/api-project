@@ -14,11 +14,12 @@ app.use(bodyParser.urlencoded({
 }))
 
 //(7) import routes mahasiswa dll
-const mahasiswaRoutes = require('./routes/mahasiswa')
+const mahasiswaRoutes = require('./routes/mahasiswa');
+const authRoutes = require('./routes/auth');
 
 //(8) daftarkan mahasiswaroutes ke express
-app.use('/mahasiswa', mahasiswaRoutes)
-app.use(bodyParser.json());
+app.use('/mahasiswa', mahasiswaRoutes);
+app.use('1/auth', authRoutes);
 
 // (3) koneksi ke database mongodb
 mongoose.connect(process.env.DB_CONNECTION, {
