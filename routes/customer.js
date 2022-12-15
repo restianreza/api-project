@@ -1,10 +1,9 @@
-// (5) Buat router Mahasiswa
+// (5) Buat router customer
 const express = require('express')
 const router = express.Router()
 const Customer = require('../models/Customer')
 
 //import verifyToken
-const verifyToken = require('../config/verifyToken')
 
 
 // Create 
@@ -12,7 +11,7 @@ router.post('/', async (req, res) => {
     // tampung input mahasiswa 
     const customerPost = new Customer({
         nama: req.body.nama,
-        alamat: req.body.alamat
+        tanggal: req.body.tanggal
     })
 
     try {
@@ -28,7 +27,7 @@ router.post('/', async (req, res) => {
 })
 
 //Read (method get)
-router.get('/',verifyToken, async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const customer = await Customer.find()
         res.json(customer)
@@ -45,7 +44,7 @@ router.put('/:customerId', async (req, res) => {
     // tampung input customer 
     const data = {
         nama: req.body.nama,
-        alamat: req.body.alamat
+        tanggal: req.body.tanggal
     }
 
     try {

@@ -6,7 +6,7 @@ const CustomerSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    alamat: {
+    tanggal: {
         type: String,
         required: true
     },
