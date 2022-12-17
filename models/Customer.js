@@ -6,7 +6,11 @@ const CustomerSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    tanggal: {
+    check_in: {
+        type: String,
+        required: true
+    },
+    check_out: {
         type: String,
         required: true
     },

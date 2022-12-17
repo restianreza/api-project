@@ -11,7 +11,8 @@ router.post('/', async (req, res) => {
     // tampung input mahasiswa 
     const customerPost = new Customer({
         nama: req.body.nama,
-        tanggal: req.body.tanggal
+        check_in: req.body.check_in,
+        check_out: req.body.check_out
     })
 
     try {
@@ -44,7 +45,8 @@ router.put('/:customerId', async (req, res) => {
     // tampung input customer 
     const data = {
         nama: req.body.nama,
-        tanggal: req.body.tanggal
+        check_in: req.body.check_in,
+        check_out: req.body.check_out
     }
 
     try {
