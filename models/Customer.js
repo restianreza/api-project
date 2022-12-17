@@ -7,11 +7,11 @@ const CustomerSchema = mongoose.Schema({
         required: true
     },
     check_in: {
-        type: String,
+        type: Date,
         required: true
     },
     check_out: {
-        type: String,
+        type: Date,
         required: true
     },
     createdAt: {
